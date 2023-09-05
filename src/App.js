@@ -1,14 +1,17 @@
 import 'assets/css/app.css';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from 'pages/HomePage';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Details from 'pages/Details';
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path='/' element={<HomePage/>} />
-        </Routes>
-      </Router>
+     <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/categories/:idc" element={<Details/>} />
+      </Routes>
+     </BrowserRouter>
     </div>
   );
 }
